@@ -1,0 +1,31 @@
+version: "3"
+services:
+  ktor-server:
+    image: emresahin10/saymyname-backend:latest
+    build: .
+    ports:
+      - "1010:1010"
+    depends_on:
+      - db
+    networks:
+      - mongo
+    restart: always
+    environment:
+      PORT: 1010
+      MONGO_DB_NAME: $MONGO_DB_NAME
+      MONGO_USER: $MONGO_USER
+      MONGO_PW: $MONGO_PW
+      MONGO_DB_URI: $MONGO_DB_URI
+
+  db:
+    image: arm64v8/mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./localvolumes/mongo:/data/db
+    networks:
+      - mongo
+    restart: always
+networks:
+  mongo:
+    driver: bridge
