@@ -1,8 +1,10 @@
 package emresahin.plugins
 
-import emresahin.service.CharactersService
 import emresahin.routes.characterRoute
 import emresahin.routes.homeRoute
+import emresahin.routes.quoteRoute
+import emresahin.service.CharactersService
+import emresahin.service.QuotesService
 import io.ktor.server.application.*
 import io.ktor.server.routing.*
 import org.koin.core.parameter.parametersOf
@@ -19,12 +21,16 @@ fun Application.configureRouting() {
     val coroutineClient by inject<CoroutineClient> {
         parametersOf(uri)
     }
-    val service by inject<CharactersService> {
+    val charactersService by inject<CharactersService> {
+        parametersOf(coroutineClient)
+    }
+    val quotesService by inject<QuotesService> {
         parametersOf(coroutineClient)
     }
 
     routing {
         homeRoute()
-        characterRoute(service)
+        characterRoute(charactersService)
+        quoteRoute(quotesService)
     }
 }
