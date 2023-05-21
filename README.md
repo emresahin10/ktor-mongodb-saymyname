@@ -21,7 +21,7 @@ for spesific character.:
   "charId": "2",
   "name": "Jesse Pinkman",
   "birthday": "09-24-1984",
-  "img": "https://web.archive.org/web/20220628223752/https://vignette.wikia.nocookie.net/breakingbad/images/9/95/JesseS5.jpg/revision/latest?cb=20120620012441",
+  "img": "https://vignette.wikia.nocookie.net/breakingbad/images/9/95/JesseS5.jpg/revision/latest?cb=20120620012441",
   "status": "Alive",
   "nickname": "Cap n' Cook",
   "portrayed": "Aaron Paul",
