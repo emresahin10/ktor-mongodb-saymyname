@@ -1,5 +1,4 @@
-W.I.P.
-NO MORE ACCESS
+NO MORE ACCESS 😫
 
 <h2>CHARACTERS</h2>
 List of series characters:
